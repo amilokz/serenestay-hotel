@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #faf6ee;
+  --color-cream-deep: #f3ecdc;
+  --color-sage-100: #eef3e6;
+  --color-sage-200: #dce5d4;
+  --color-sage-300: #c3d4b4;
+  --color-sage-400: #a8b89a;
+  --color-sage-500: #8a9c7c;
+  --color-pine-600: #3d5a52;
+  --color-pine-700: #2e4a44;
+  --color-pine-800: #1e3a34;
+  --color-pine-900: #142825;
+  --color-teal-deep: #0e4f4a;
+  --color-teal-bright: #147a70;
+  --color-gold: #c9a96a;
+
+  --font-display: var(--font-cormorant), "Georgia", "Times New Roman", serif;
+  --font-sans: var(--font-geist-body), "Segoe UI", system-ui, sans-serif;
+
+  --animate-drift: drift 14s ease-in-out infinite alternate;
+  --animate-drift-slow: drift 22s ease-in-out infinite alternate;
+  --animate-fade-up: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-glow-pulse: glow-pulse 5s ease-in-out infinite;
+
+  @keyframes drift {
+    from { transform: translate3d(-2%, 0, 0); }
+    to { transform: translate3d(2%, -1.5%, 0); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 0.9; }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-pine-900);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* layered mountain silhouette */
+.mountain-layer {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+/* soft grain-free mist band */
+.mist-band {
+  background: linear-gradient(
+    to top,
+    rgba(250, 246, 238, 0.95) 0%,
+    rgba(250, 246, 238, 0.35) 45%,
+    rgba(250, 246, 238, 0) 100%
+  );
+}
+
+/* thin elegant divider */
+.rule-soft {
+  background: linear-gradient(to right, transparent, var(--color-sage-300), transparent);
+  height: 1px;
+}
+
+/* date inputs inherit the calm styling */
+input[type="date"] {
+  color-scheme: light;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.55;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--color-sage-300);
+  color: var(--color-pine-900);
+}
