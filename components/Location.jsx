@@ -121,7 +121,10 @@ export default function Location() {
             <a href="#contact" className="hover:text-cream">Contact</a>
           </nav>
           <p className="text-[12px] text-cream/40">
-            © 2026 SereneStay · A fictional demo website by AKCLNT
+            © 2026 SereneStay · A fictional demo website by{" "}
+            <a href="https://akclnt.com" target="_blank" rel="noreferrer" className="hover:text-cream">
+              AKCLNT
+            </a>
           </p>
         </div>
       </div>
